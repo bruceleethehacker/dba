@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="nav">
+  <a href="{{ url_for('splash') }}">← Back</a>
+</div>
+
+<div class="card">
+  <div style="text-align:center">
+    <div class="shield">🛡️</div>
+    <h2>Welcome Back</h2>
+    <p class="muted">Authenticate with your behavioral identity</p>
+  </div>
+
+  <label>Email Address</label>
+  <input id="email" type="email" autocomplete="email">
+
+  <label>Security PIN</label>
+  <input id="pin" type="password" autocomplete="current-password">
+
+  <p id="err" class="err"></p>
+
+  <button id="submit" class="btn btn-primary" style="margin-top:14px">
+    Login & Authenticate
+  </button>
+
+  <p class="muted" style="text-align:center;margin-top:10px">
+    No account? <a href="{{ url_for('register') }}">Register</a>
+  </p>
+</div>
+
+<script>
+const btn = document.getElementById('submit');
+const err = document.getElementById('err');
+
+btn.onclick = async () => {
+  const email = document.getElementById('email').value.trim();
+  const pin = document.getElementById('pin').value;
+
+  err.textContent = '';
+
+  // ✅ validation fix
+  if (!email || !pin) {
+    err.textContent = "Please enter email and PIN";
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Authenticating...";
+
+  try {
+    const r = await fetch('{{ url_for("login") }}', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, pin })
+    });
+
+    // ✅ safe JSON parsing
+    let d;
+    try {
+      d = await r.json();
+    } catch (e) {
+      throw new Error("Server returned invalid response");
+    }
+
+    if (r.ok && d.ok) {
+      location.href = d.redirect;
+    } else {
+      err.textContent = d.error || "Login failed";
+    }
+
+  } catch (e) {
+    err.textContent = "Network or server error";
+  }
+
+  btn.disabled = false;
+  btn.textContent = "Login & Authenticate";
+};
+</script>
+
+{% endblock %}

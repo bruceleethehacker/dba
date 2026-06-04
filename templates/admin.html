@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="nav"><a href="{{ url_for('splash') }}">← Home</a></div>
+<h2 style="text-align:center">Admin Dashboard</h2>
+<p class="muted" style="text-align:center">System metrics & model controls</p>
+
+<div class="grid2">
+  <div class="stat"><div class="num">{{ metrics.totalUsers }}</div><div class="lab">Users</div></div>
+  <div class="stat"><div class="num">{{ metrics.enrolled }}</div><div class="lab">Enrolled</div></div>
+  <div class="stat"><div class="num">{{ metrics.avgConfidence }}%</div><div class="lab">Avg Confidence</div></div>
+  <div class="stat"><div class="num">{{ metrics.FAR }}%</div><div class="lab">False Accept Rate</div></div>
+  <div class="stat"><div class="num">{{ metrics.FRR }}%</div><div class="lab">False Reject Rate</div></div>
+  <div class="stat"><div class="num" style="font-size:14px">{{ metrics.modelVersion }}</div><div class="lab">Model</div></div>
+</div>
+
+<div class="card">
+  <h3>Enrolled Users</h3>
+  <table>
+    <thead><tr><th>Name</th><th>Email</th><th>Confidence</th><th>Status</th></tr></thead>
+    <tbody>
+    {% for u in users %}
+      <tr><td>{{ u.fullName }}</td><td>{{ u.email }}</td><td>{{ u.confidence }}%</td>
+        <td>{% if u.enrolled %}<span class="badge ok">Enrolled</span>{% else %}<span class="badge warn">Pending</span>{% endif %}</td></tr>
+    {% else %}
+      <tr><td colspan="4" class="muted">No users yet</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>Model Controls</h3>
+  <p class="muted">TensorFlow Lite integration placeholder</p>
+  <div class="row">
+    <button class="btn" id="retrain">Retrain Model</button>
+    <a class="btn btn-ghost" href="{{ url_for('api_export') }}" target="_blank" style="text-align:center;text-decoration:none">Export Data</a>
+  </div>
+  <p id="retrainOut" class="muted" style="margin-top:8px"></p>
+</div>
+<script>
+document.getElementById('retrain').onclick = async () => {
+  const r = await fetch('{{ url_for("api_retrain") }}', {method:'POST'});
+  const d = await r.json();
+  document.getElementById('retrainOut').textContent = 'Retrain: ' + d.status + ' — ' + d.note;
+};
+</script>
+{% endblock %}

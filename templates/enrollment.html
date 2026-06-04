@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="nav"><a href="{{ url_for('splash') }}">← Back</a></div>
+<h2 style="text-align:center">Behavior Enrollment</h2>
+<p class="muted" style="text-align:center">Complete each task to extract behavioral features</p>
+<div class="progress-wrap"><div id="prog" style="width:0%"></div></div>
+<p class="muted" id="progLabel" style="text-align:center;margin:6px 0 14px">0% complete</p>
+
+<div class="card">
+  <h3>⌨️ Typing Dynamics</h3>
+  <p class="muted">Type the following sentence accurately:</p>
+  <p style="font-style:italic;color:var(--primary-glow)">The quick brown fox jumps over the lazy dog near the river bank.</p>
+  <input id="typingInput" type="text" placeholder="Start typing...">
+  <p class="muted" id="typingStats">Samples: 0</p>
+</div>
+
+<div class="card">
+  <h3>📜 Scrolling Pattern</h3>
+  <p class="muted">Scroll up and down inside the box for ~10 seconds.</p>
+  <div class="scroll-zone" id="scrollZone">
+    {% for i in range(9) %}<p>Line {{ i+1 }} — You can use this paragraph in the **Scrolling Test** section:
+
+> Modern web applications rely heavily on scrolling interactions for navigation and content consumption. During this test, users are required to scroll naturally through the content area by moving both upward and downward. The system records behavioral characteristics such as scrolling speed, acceleration, direction changes, pause intervals, and overall scrolling patterns. These unique behavioral traits help create a personalized scrolling profile, which is later used as part of the behavioral biometric authentication process to enhance user verification and detect anomalous activity.
+</p>{% endfor %}
+  </div>
+  <p class="muted" id="scrollStats">Samples: 0</p>
+</div>
+
+<div class="card">
+  <h3>👆 Tap Behavior</h3>
+  <p class="muted">Tap the moving target as quickly as possible (10 taps).</p>
+  <div class="tap-zone" id="tapZone"><button id="tapBtn" class="tap-target" style="top:50%;left:50%"></button></div>
+  <p class="muted" id="tapStats">Taps: 0 / 10</p>
+</div>
+
+<div class="card">
+  <h3>👉 Swipe Gestures</h3>
+  <p class="muted">Swipe across the box several times in different directions.</p>
+  <div class="swipe-zone" id="swipeZone">Swipe here</div>
+  <p class="muted" id="swipeStats">Swipes: 0</p>
+</div>
+
+<div class="card">
+  <h3>📱 Motion Stability</h3>
+  <p class="muted">Hold the device steady for 5 seconds (simulated).</p>
+  <button id="motionBtn" class="btn">Start Motion Sample</button>
+  <p class="muted" id="motionStats">Stability: —</p>
+</div>
+
+<button id="finishBtn" class="btn btn-primary" disabled>Complete Enrollment</button>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/telemetry.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sensor_bridge.js') }}"></script>
+<script src="{{ url_for('static', filename='js/enrollment.js') }}"></script>
+{% endblock %}

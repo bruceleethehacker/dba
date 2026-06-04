@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="nav"><a href="{{ url_for('splash') }}">← Back</a></div>
+<div class="card">
+  <div style="text-align:center"><div class="shield">🛡️</div><h2>User Registration</h2><p class="muted">Create your behavioral identity profile</p></div>
+  <label>Full Name</label><input id="fullName" type="text" placeholder="John Doe">
+  <label>Email Address</label><input id="email" type="email" placeholder="john@example.com">
+  <label>Security PIN (4-8 digits)</label><input id="pin" type="password" placeholder="••••">
+  <label>Confirm PIN</label><input id="confirmPin" type="password" placeholder="••••">
+  <p id="err" class="err"></p>
+  <button id="submit" class="btn btn-primary" style="margin-top:14px">Start Enrollment</button>
+  <p class="muted" style="text-align:center;margin-top:10px">Have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</div>
+<script>
+document.getElementById('submit').onclick = async () => {
+
+  const fullName = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const pin = document.getElementById('pin').value;
+  const confirmPin = document.getElementById('confirmPin').value;
+
+  const err = document.getElementById('err');
+  err.textContent = '';
+
+  if (!fullName || !email || !pin) {
+    err.textContent = 'All fields required';
+    return;
+  }
+
+  if (pin.length < 4 || pin.length > 8) {
+    err.textContent = 'PIN must be 4-8 chars';
+    return;
+  }
+
+  if (pin !== confirmPin) {
+    err.textContent = 'PINs do not match';
+    return;
+  }
+
+  const r = await fetch('{{ url_for("register") }}', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      fullName,
+      email,
+      pin
+    })
+  });
+
+  const d = await r.json();
+
+  if (d.ok) {
+    location.href = d.redirect;
+  } else {
+    err.textContent = d.error || 'Failed';
+  }
+};
+</script>
+{% endblock %}

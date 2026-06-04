@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="nav"><a href="{{ url_for('splash') }}">← Home</a><a href="{{ url_for('auth') }}">Continue to Auth →</a></div>
+<h2 style="text-align:center">Behavior Report</h2>
+<p class="muted" style="text-align:center">{{ user.fullName }} · {{ user.email }}</p>
+
+<div class="card" style="text-align:center">
+  <div class="ring">
+    <svg width="160" height="160">
+      <circle cx="80" cy="80" r="68" stroke="#1e293b" stroke-width="14" fill="none"/>
+      <circle cx="80" cy="80" r="68" stroke="url(#g)" stroke-width="14" fill="none"
+        stroke-dasharray="{{ (result.confidence/100)*427.25 }} 427.25" stroke-linecap="round"/>
+      <defs><linearGradient id="g"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#22d3a5"/></linearGradient></defs>
+    </svg>
+    <div class="val">{{ result.confidence }}%</div>
+  </div>
+  <h3 class="{% if result.status=='genuine' %}ok{% elif result.status=='verification_required' %}warn{% else %}bad{% endif %}">{{ result.label }}</h3>
+  <p class="muted">Confidence Score · Risk: {{ result.risk }}%</p>
+</div>
+
+<div class="card">
+  <h3>Feature Scores</h3>
+  {% for k, v in result.scores.items() %}
+    <div style="margin:10px 0">
+      <div class="kv">
+        <span style="text-transform:capitalize">{{ k }}</span>
+        <span>{{ '%.1f' % v }}%</span>
+      </div>
+      <div class="bar">
+        <div style="width: {{ v|int }}%"></div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="card">
+  <h3>System Info</h3>
+  <div class="kv"><span class="muted">Modalities</span><span>5 (Typing, Scroll, Tap, Swipe, Motion)</span></div>
+  <div class="kv"><span class="muted">Mode</span><span>Continuous Authentication</span></div>
+  <div class="kv"><span class="muted">Adaptive Learning</span><span class="ok">Enabled</span></div>
+  <div class="kv"><span class="muted">TensorFlow Lite</span><span class="ok">Ready</span></div>
+</div>
+
+<a href="{{ url_for('auth') }}"><button class="btn btn-primary">Start Real-Time Authentication</button></a>
+{% endblock %}

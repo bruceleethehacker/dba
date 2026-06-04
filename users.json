@@ -1,0 +1,444 @@
+{
+  "t@x.com": {
+    "fullName": "Test",
+    "email": "t@x.com",
+    "pinHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "registeredAt": "2026-06-04T04:15:53.021170",
+    "features": {
+      "motion": {
+        "movementVariation": 10,
+        "samples": 10,
+        "stabilityScore": 85
+      },
+      "scrolling": {
+        "avgSpeed": 200,
+        "directionChanges": 8,
+        "samples": 30,
+        "totalDistance": 1500
+      },
+      "swipe": {
+        "avgAngle": 45,
+        "avgDistance": 180,
+        "avgSpeed": 500,
+        "samples": 6
+      },
+      "tap": {
+        "accuracy": 92,
+        "avgReactionTime": 320,
+        "samples": 10
+      },
+      "typing": {
+        "avgKeyDelay": 120,
+        "avgSpeed": 60,
+        "errorRate": 0.05,
+        "samples": 40
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 65.81,
+    "modelPath": "E:\\PROJECT\\BEHAVIORAL_AUTHENTICATION_SYSTEM\\bas-flask\\ml\\artifacts\\t_at_x.com.joblib",
+    "enrolledAt": "2026-06-04T04:15:53.148862"
+  },
+  "papa1234@gmail.com": {
+    "fullName": "papa",
+    "email": "papa1234@gmail.com",
+    "pinHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "registeredAt": "2026-05-25T08:12:46.520997",
+    "features": {
+      "typing": {
+        "avgSpeed": 38,
+        "avgKeyDelay": 380,
+        "backspaceCount": 4,
+        "errorRate": 0,
+        "avgPauseTime": 570,
+        "samples": 54
+      },
+      "scrolling": {
+        "avgSpeed": 1050,
+        "totalDistance": 2236,
+        "avgStopTime": 0,
+        "directionChanges": 4,
+        "samples": 182
+      },
+      "tap": {
+        "avgReactionTime": 4388,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 384,
+        "avgDistance": 113,
+        "avgAngle": 24,
+        "avgDuration": 295,
+        "samples": 8
+      },
+      "motion": {
+        "stabilityScore": 88,
+        "movementVariation": 11,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 66.56,
+    "modelPath": "C:\\Users\\sania\\Downloads\\behavioral-auth-flask-enhanced-v2\\bas-flask\\ml\\artifacts\\papa1234_at_gmail.com.joblib",
+    "enrolledAt": "2026-05-25T08:13:43.819402"
+  },
+  "abhilashnaidug01@gmail.com": {
+    "fullName": "abhilash naidu",
+    "email": "abhilashnaidug01@gmail.com",
+    "pinHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "registeredAt": "2026-05-25T06:19:07.549297",
+    "features": {},
+    "enrollmentComplete": false,
+    "confidence": 0
+  },
+  "thangachi@gmail.com": {
+    "fullName": "thangachi",
+    "email": "thangachi@gmail.com",
+    "pinHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "registeredAt": "2026-05-25T06:43:52.419674",
+    "features": {
+      "typing": {
+        "avgSpeed": 21,
+        "avgKeyDelay": 401,
+        "backspaceCount": 13,
+        "errorRate": 0.7704918032786885,
+        "avgPauseTime": 601,
+        "samples": 10
+      },
+      "scrolling": {
+        "avgSpeed": 1320,
+        "totalDistance": 2297,
+        "avgStopTime": 0,
+        "directionChanges": 2,
+        "samples": 8
+      },
+      "tap": {
+        "avgReactionTime": 6334,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 300,
+        "avgDistance": 106,
+        "avgAngle": 2,
+        "avgDuration": 370,
+        "samples": 8
+      },
+      "motion": {
+        "stabilityScore": 90,
+        "movementVariation": 9,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 51.21,
+    "modelPath": "C:\\Users\\sania\\Downloads\\behavioral-auth-flask-enhanced-v2\\bas-flask\\ml\\artifacts\\thangachi_at_gmail.com.joblib",
+    "enrolledAt": "2026-05-25T06:59:02.473759"
+  },
+  "demo@bas.local": {
+    "fullName": "Demo User",
+    "email": "demo@bas.local",
+    "pinHash": "9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0",
+    "registeredAt": "2026-06-04T03:44:28.880384",
+    "features": {
+      "typing": {
+        "avgSpeed": 72,
+        "avgKeyDelay": 130,
+        "errorRate": 0.08,
+        "samples": 120
+      },
+      "scrolling": {
+        "avgSpeed": 280,
+        "totalDistance": 1800,
+        "directionChanges": 14,
+        "samples": 30
+      },
+      "tap": {
+        "avgReactionTime": 320,
+        "accuracy": 92,
+        "samples": 45
+      },
+      "swipe": {
+        "avgSpeed": 560,
+        "avgDistance": 210,
+        "avgAngle": 35,
+        "samples": 20
+      },
+      "motion": {
+        "stabilityScore": 88,
+        "samples": 60
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 72.07
+  },
+  "ghousebro@gmail.com": {
+    "fullName": "ghousebro",
+    "email": "ghousebro@gmail.com",
+    "pinHash": "6ce5d724d32bdd2d72867fc3c7c752ec386ef8a3db6e73c7c3932d41f0519987",
+    "registeredAt": "2026-05-25T07:46:46.630512",
+    "features": {},
+    "enrollmentComplete": false,
+    "confidence": 0
+  },
+  "chikki00143@gmail.com": {
+    "fullName": "chikki",
+    "email": "chikki00143@gmail.com",
+    "pinHash": "c1cf024576e9c756b252bd5035efc64c72c17affe236909ded190d266a5bfdf1",
+    "registeredAt": "2026-05-25T14:04:10.880017",
+    "features": {
+      "typing": {
+        "avgSpeed": 31,
+        "avgKeyDelay": 391,
+        "backspaceCount": 0,
+        "errorRate": 0,
+        "avgPauseTime": 587,
+        "samples": 65
+      },
+      "scrolling": {
+        "avgSpeed": 2218,
+        "totalDistance": 21199,
+        "avgStopTime": 0,
+        "directionChanges": 30,
+        "samples": 1277
+      },
+      "tap": {
+        "avgReactionTime": 6164,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 255,
+        "avgDistance": 110,
+        "avgAngle": 22,
+        "avgDuration": 445,
+        "samples": 19
+      },
+      "motion": {
+        "stabilityScore": 85,
+        "movementVariation": 12,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 63.76,
+    "modelPath": "C:\\Users\\sania\\Downloads\\behavioral-auth-flask-enhanced-v2\\bas-flask\\ml\\artifacts\\chikki00143_at_gmail.com.joblib",
+    "enrolledAt": "2026-05-25T14:05:44.102269"
+  },
+  "raman00112@gmail.com": {
+    "fullName": "raman",
+    "email": "raman00112@gmail.com",
+    "pinHash": "d4758ff40ebce1b5d0980f165c14d660f4723e50cd8c59d25403cde2ad87edc6",
+    "registeredAt": "2026-05-26T06:29:37.206504",
+    "features": {
+      "typing": {
+        "avgSpeed": 29,
+        "avgKeyDelay": 366,
+        "backspaceCount": 4,
+        "errorRate": 0.7586206896551724,
+        "avgPauseTime": 548,
+        "samples": 67
+      },
+      "scrolling": {
+        "avgSpeed": 955,
+        "totalDistance": 5148,
+        "avgStopTime": 0,
+        "directionChanges": 8,
+        "samples": 520
+      },
+      "tap": {
+        "avgReactionTime": 6906,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 317,
+        "avgDistance": 111,
+        "avgAngle": 0,
+        "avgDuration": 362,
+        "samples": 26
+      },
+      "motion": {
+        "stabilityScore": 87,
+        "movementVariation": 12,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 52.06,
+    "modelPath": "E:\\PROJECT\\BEHAVIORAL_AUTHENTICATION_SYSTEM\\bas-flask\\ml\\artifacts\\raman00112_at_gmail.com.joblib",
+    "enrolledAt": "2026-05-26T06:31:17.806831"
+  },
+  "test@gmail.com": {
+    "fullName": "test",
+    "email": "test@gmail.com",
+    "pinHash": "77459b9b941bcb4714d0c121313c900ecf30541d158eb2b9b178cdb8eca6457e",
+    "registeredAt": "2026-05-26T07:18:50.176909",
+    "features": {
+      "typing": {
+        "avgSpeed": 26,
+        "avgKeyDelay": 414,
+        "backspaceCount": 4,
+        "errorRate": 0.9206349206349206,
+        "avgPauseTime": 621,
+        "samples": 72
+      },
+      "scrolling": {
+        "avgSpeed": 599,
+        "totalDistance": 1714,
+        "avgStopTime": 0,
+        "directionChanges": 4,
+        "samples": 321
+      },
+      "tap": {
+        "avgReactionTime": 6352,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 238,
+        "avgDistance": 107,
+        "avgAngle": 47,
+        "avgDuration": 467,
+        "samples": 8
+      },
+      "motion": {
+        "stabilityScore": 88,
+        "movementVariation": 14,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 49.69,
+    "modelPath": "E:\\PROJECT\\BEHAVIORAL_AUTHENTICATION_SYSTEM\\bas-flask\\ml\\artifacts\\test_at_gmail.com.joblib",
+    "enrolledAt": "2026-05-26T07:20:15.942984"
+  },
+  "vijay123@gmail.com": {
+    "fullName": "vijay",
+    "email": "vijay123@gmail.com",
+    "pinHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "registeredAt": "2026-06-03T18:04:08.874048",
+    "features": {
+      "typing": {
+        "avgSpeed": 33,
+        "avgKeyDelay": 354,
+        "backspaceCount": 1,
+        "errorRate": 0,
+        "avgPauseTime": 530,
+        "samples": 67
+      },
+      "scrolling": {
+        "avgSpeed": 809,
+        "totalDistance": 7535,
+        "avgStopTime": 0,
+        "directionChanges": 14,
+        "samples": 1153
+      },
+      "tap": {
+        "avgReactionTime": 8931,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 332,
+        "avgDistance": 98,
+        "avgAngle": 21,
+        "avgDuration": 303,
+        "samples": 12
+      },
+      "motion": {
+        "stabilityScore": 86,
+        "movementVariation": 14,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 64.51,
+    "modelPath": "E:\\PROJECT\\BEHAVIORAL_AUTHENTICATION_SYSTEM\\bas-flask\\ml\\artifacts\\vijay123_at_gmail.com.joblib",
+    "enrolledAt": "2026-06-03T19:06:45.355232"
+  },
+  "nishanth123@gmail.com": {
+    "fullName": "nishanth",
+    "email": "nishanth123@gmail.com",
+    "pinHash": "2a057642222a878bc360f52f8e1f0dfd2af93196f123269397423155a4ec4884",
+    "registeredAt": "2026-06-03T18:38:30.542304",
+    "features": {},
+    "enrollmentComplete": false,
+    "confidence": 0
+  },
+  "user1@gmail.com": {
+    "fullName": "user1",
+    "email": "user1@gmail.com",
+    "pinHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "registeredAt": "2026-06-04T01:25:47.311522",
+    "features": {
+      "typing": {
+        "avgSpeed": 23,
+        "avgKeyDelay": 434,
+        "backspaceCount": 5,
+        "errorRate": 0,
+        "avgPauseTime": 651,
+        "samples": 77
+      },
+      "scrolling": {
+        "avgSpeed": 551,
+        "totalDistance": 4547,
+        "avgStopTime": 0,
+        "directionChanges": 10,
+        "samples": 1063
+      },
+      "tap": {
+        "avgReactionTime": 8119,
+        "accuracy": 100,
+        "avgInterval": 0,
+        "avgDuration": 0,
+        "samples": 10
+      },
+      "swipe": {
+        "avgSpeed": 322,
+        "avgDistance": 127,
+        "avgAngle": 35,
+        "avgDuration": 410,
+        "samples": 13
+      },
+      "motion": {
+        "stabilityScore": 91,
+        "movementVariation": 10,
+        "handlingPattern": "steady",
+        "samples": 10
+      }
+    },
+    "enrollmentComplete": true,
+    "confidence": 65.17,
+    "modelPath": "E:\\PROJECT\\BEHAVIORAL_AUTHENTICATION_SYSTEM\\bas-flask\\ml\\artifacts\\user1_at_gmail.com.joblib",
+    "enrolledAt": "2026-06-04T01:27:51.077576"
+  },
+  "adi1234@gmail.com": {
+    "fullName": "adi",
+    "email": "adi1234@gmail.com",
+    "pinHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "registeredAt": "2026-06-04T03:44:04.681107",
+    "features": {},
+    "enrollmentComplete": false,
+    "confidence": 0
+  }
+}

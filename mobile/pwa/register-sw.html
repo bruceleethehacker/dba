@@ -1,0 +1,12 @@
+<!-- Drop this snippet inside templates/base.html <head> to enable the PWA.
+     Kept as a separate file so the original templates remain unchanged. -->
+<link rel="manifest" href="/mobile/pwa/manifest.webmanifest">
+<meta name="theme-color" content="#0b1020">
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/mobile/pwa/service-worker.js")
+        .catch((e) => console.warn("SW register failed", e));
+    });
+  }
+</script>

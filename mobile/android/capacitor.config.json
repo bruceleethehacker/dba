@@ -1,0 +1,21 @@
+{
+  "appId": "dev.lovable.behavioralauth",
+  "appName": "Behavioral Auth",
+  "webDir": "../../static",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://YOUR-FLASK-HOST.example.com",
+    "cleartext": false,
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "Motion": { "enabled": true },
+    "Device": { "enabled": true },
+    "Haptics": { "enabled": true }
+  },
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  }
+}

@@ -1,0 +1,27 @@
+<!-- Merge into android/app/src/main/AndroidManifest.xml when wrapping the
+     Flask web app with Capacitor / Trusted Web Activity. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.BODY_SENSORS" />
+  <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+  <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+  <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="true" />
+
+  <application
+      android:allowBackup="false"
+      android:usesCleartextTraffic="false"
+      android:label="Behavioral Auth"
+      android:theme="@style/AppTheme">
+    <activity android:name=".MainActivity"
+              android:exported="true"
+              android:launchMode="singleTask"
+              android:screenOrientation="portrait">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>

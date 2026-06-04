@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="nav"><a href="{{ url_for('splash') }}">← Back</a></div>
+<div class="card" style="text-align:center">
+  <div class="shield">⚡</div>
+  <h2>Quick Demo</h2>
+  <p class="muted">Inject a pre-enrolled demo user and jump straight to the real-time authentication screen.</p>
+  <button id="go" class="btn btn-primary">Launch Demo</button>
+</div>
+<script>
+document.getElementById('go').onclick = async () => {
+  const r = await fetch('{{ url_for("demo") }}', {method:'POST'});
+  const d = await r.json();
+  if (d.ok) location.href = d.redirect;
+};
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="center">
+  <div class="shield">🛡️</div>
+  <h1>Behavioral Authentication System</h1>
+  <p class="subtitle">Your behavior is your password</p>
+  <p class="muted" style="max-width:420px">High-confidence behavioral authentication using multi-modal behavior analysis — typing, scrolling, tap, swipe and motion.</p>
+  <div style="width:100%;max-width:320px;margin-top:24px;display:grid;gap:10px">
+    <a href="{{ url_for('register') }}"><button class="btn btn-primary">Register</button></a>
+    <a href="{{ url_for('login') }}"><button class="btn">Login</button></a>
+    <a href="{{ url_for('demo') }}"><button class="btn btn-ghost">Quick Demo</button></a>
+    <a href="{{ url_for('admin') }}"><button class="btn btn-ghost">Admin Dashboard</button></a>
+  </div>
+</div>
+{% endblock %}

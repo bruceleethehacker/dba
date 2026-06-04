@@ -1,0 +1,53 @@
+/* Alert popup + toast styles (no dependencies). */
+.bas-alert-backdrop{
+  position:fixed; inset:0; background:rgba(8,12,24,.66);
+  backdrop-filter: blur(4px); z-index:9998;
+  display:flex; align-items:center; justify-content:center;
+  animation: bas-fade .18s ease-out;
+}
+.bas-alert-modal{
+  background:#fff; color:#0f172a; max-width:420px; width:92%;
+  border-radius:14px; padding:22px 22px 18px;
+  box-shadow:0 24px 60px rgba(2,6,23,.45);
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  animation: bas-pop .22s cubic-bezier(.2,.9,.3,1.2);
+}
+.bas-alert-modal.critical{ border-top:6px solid #ef4444; }
+.bas-alert-modal.warning { border-top:6px solid #f59e0b; }
+.bas-alert-icon{
+  width:48px; height:48px; border-radius:50%; display:flex;
+  align-items:center; justify-content:center; font-size:28px;
+  margin: 0 auto 10px;
+}
+.bas-alert-modal.critical .bas-alert-icon{ background:#fee2e2; color:#b91c1c; }
+.bas-alert-modal.warning  .bas-alert-icon{ background:#fef3c7; color:#92400e; }
+.bas-alert-title{ font-size:18px; font-weight:700; text-align:center; margin:4px 0 6px; }
+.bas-alert-reason{ font-size:14px; color:#475569; text-align:center; margin:0 0 6px; }
+.bas-alert-action{ font-size:13px; color:#0f172a; text-align:center; margin:0 0 14px; }
+.bas-alert-meta{ font-size:11px; color:#94a3b8; text-align:center; margin:0 0 14px; }
+.bas-alert-btns{ display:flex; gap:8px; }
+.bas-alert-btns button{
+  flex:1; padding:10px 12px; border-radius:8px; border:0; cursor:pointer;
+  font-weight:600; font-size:14px;
+}
+.bas-alert-btns .primary{ background:#0f172a; color:#fff; }
+.bas-alert-btns .ghost  { background:#f1f5f9; color:#0f172a; }
+
+/* Toasts */
+.bas-toast-stack{
+  position:fixed; right:16px; bottom:16px; z-index:9997;
+  display:flex; flex-direction:column; gap:8px; max-width:320px;
+}
+.bas-toast{
+  background:#0f172a; color:#fff; padding:10px 14px; border-radius:10px;
+  font: 500 13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  box-shadow: 0 10px 30px rgba(2,6,23,.35);
+  animation: bas-slide .25s ease-out;
+}
+.bas-toast.success{ background:#065f46; }
+.bas-toast.error  { background:#7f1d1d; }
+.bas-toast.info   { background:#1e293b; }
+
+@keyframes bas-fade { from{opacity:0} to{opacity:1} }
+@keyframes bas-pop  { from{transform:scale(.92);opacity:0} to{transform:scale(1);opacity:1} }
+@keyframes bas-slide{ from{transform:translateY(12px);opacity:0} to{transform:translateY(0);opacity:1} }
