@@ -8,6 +8,6 @@ gunicorn
 # a pure-Python z-score model when sklearn / tensorflow are missing.
 numpy>=1.26
 scikit-learn>=1.4
-tensorflow>=2.16        # provides tf.lite for .tflite export (float32 + int8)
+#tensorflow>=2.16        # provides tf.lite for .tflite export (float32 + int8)
 
 
