@@ -3,4 +3,11 @@ scikit-learn>=1.8.0
 joblib>=1.3.0
 numpy>=1.24.0
 gunicorn
+# Optional ML stack for training & TFLite conversion.
+# The base app runs without these -- the anomaly detector falls back to
+# a pure-Python z-score model when sklearn / tensorflow are missing.
+numpy>=1.26
+scikit-learn>=1.4
+tensorflow>=2.16        # provides tf.lite for .tflite export (float32 + int8)
+
 
