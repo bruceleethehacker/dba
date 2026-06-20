@@ -154,3 +154,9 @@ and load with the standard TFLite Android interpreter (NNAPI delegate
 recommended). Use the JSON scaler in `ml/models/scaler_user_<id>.json`
 to normalize inputs identically to training.
 
+
+# Author 
+
+Veda Nishanth (bruce lee) 
+Cybersecurity| ethical hacker
+
